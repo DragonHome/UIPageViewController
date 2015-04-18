@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E919E6AB1AE2100F00A94099 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E919E6AA1AE2100F00A94099 /* DetailViewController.swift */; };
 		E9E9526E1AE155D1007E32E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E9526D1AE155D1007E32E2 /* AppDelegate.swift */; };
 		E9E952711AE155D1007E32E2 /* CustomTableView_shareAction_deleteAction.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E9E9526F1AE155D1007E32E2 /* CustomTableView_shareAction_deleteAction.xcdatamodeld */; };
 		E9E952761AE155D1007E32E2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9E952741AE155D1007E32E2 /* Main.storyboard */; };
@@ -27,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E919E6AA1AE2100F00A94099 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		E9E952681AE155D1007E32E2 /* FoodPin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodPin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9E9526C1AE155D1007E32E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E9E9526D1AE155D1007E32E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 				E9E9526B1AE155D1007E32E2 /* Supporting Files */,
 				E9E952901AE156C3007E32E2 /* RestaurantTableViewController.swift */,
 				E9E952921AE15EA4007E32E2 /* CustomTableViewCell.swift */,
+				E919E6AA1AE2100F00A94099 /* DetailViewController.swift */,
 			);
 			path = FoodPin;
 			sourceTree = "<group>";
@@ -219,6 +222,7 @@
 			files = (
 				E9E9526E1AE155D1007E32E2 /* AppDelegate.swift in Sources */,
 				E9E952711AE155D1007E32E2 /* CustomTableView_shareAction_deleteAction.xcdatamodeld in Sources */,
+				E919E6AB1AE2100F00A94099 /* DetailViewController.swift in Sources */,
 				E9E952931AE15EA4007E32E2 /* CustomTableViewCell.swift in Sources */,
 				E9E952911AE156C3007E32E2 /* RestaurantTableViewController.swift in Sources */,
 			);
