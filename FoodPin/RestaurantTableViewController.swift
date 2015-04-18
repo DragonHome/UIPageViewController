@@ -16,6 +16,15 @@ class RestaurantTableViewController: UITableViewController, UITableViewDataSourc
     var restaurantImages = ["1.png", "2.png", "3.jpeg", "4.png"]
     var restaurantIsVisited = [Bool](count: 21, repeatedValue: false)
     
+    var restaurants:[Restaurant] = [
+        Restaurant(name: "A", type: "1", location: "Apple", image: "1.png", isVisited: false),
+        Restaurant(name: "B", type: "2", location: "Google", image: "2.png", isVisited: false),
+        Restaurant(name: "C", type: "3", location: "Facebook", image: "3.jpeg", isVisited: false),
+        Restaurant(name: "D", type: "4", location: "Microsoft", image: "4.png", isVisited: false)
+        
+    
+    ]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -76,7 +85,7 @@ class RestaurantTableViewController: UITableViewController, UITableViewDataSourc
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return self.restaurantNames.count
+        return self.restaurants.count
     }
     
     
@@ -86,11 +95,14 @@ class RestaurantTableViewController: UITableViewController, UITableViewDataSourc
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! CustomTableViewCell
 
          //Configure the cell...
-        cell.nameLabel.text = restaurantNames[indexPath.row]
-        cell.locationLabel.text = restaurantLocations[indexPath.row]
-        cell.typeLabel.text = restaurantTypes[indexPath.row]
+        let restaurant = restaurants[indexPath.row]
+        cell.nameLabel.text = restaurant.name
+        cell.locationLabel.text = restaurant.location
+        cell.typeLabel.text = restaurant.type
+        cell.thumbnailImageView.image = UIImage(named: restaurant.image)
+        cell.favorIconImageView.hidden = !restaurant.isVisited
         
-        cell.thumbnailImageView.image = UIImage(named: restaurantImages[indexPath.row])
+        //Circular image...
         cell.thumbnailImageView.layer.cornerRadius = cell.thumbnailImageView.frame.size.width / 2
         cell.thumbnailImageView.clipsToBounds = true
         
@@ -121,11 +133,8 @@ class RestaurantTableViewController: UITableViewController, UITableViewDataSourc
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
             // Delete the row from the data source
-            self.restaurantNames.removeAtIndex(indexPath.row)
-            self.restaurantLocations.removeAtIndex(indexPath.row)
-            self.restaurantTypes.removeAtIndex(indexPath.row)
-            self.restaurantIsVisited.removeAtIndex(indexPath.row)
-            self.restaurantImages.removeAtIndex(indexPath.row)
+            self.restaurants.removeAtIndex(indexPath.row)
+            
             self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
             self.tableView.reloadData()
             
@@ -200,8 +209,9 @@ class RestaurantTableViewController: UITableViewController, UITableViewDataSourc
         if segue.identifier == "showRestaurantDetail" {
             if let indexPath = self.tableView.indexPathForSelectedRow() {
                 let destinationController = segue.destinationViewController as! DetailViewController
-                destinationController.restaurantImage = self.restaurantImages[indexPath.row]
-                destinationController.restaurantName = self.restaurantNames[indexPath.row]
+                
+                destinationController.restaurantImage = self.restaurants[indexPath.row].image
+                destinationController.restaurantName = self.restaurants[indexPath.row].name
             }
         }
     }
