@@ -19,7 +19,7 @@ class RestaurantTableViewController: UITableViewController, UITableViewDataSourc
     var restaurants:[Restaurant] = [
         Restaurant(name: "A", type: "1", location: "Apple", image: "1.png", isVisited: false),
         Restaurant(name: "B", type: "2", location: "Google", image: "2.png", isVisited: false),
-        Restaurant(name: "C", type: "3", location: "Facebook", image: "3.jpeg", isVisited: false),
+        Restaurant(name: "C", type: "3", location: "Facebook", image: "3.png", isVisited: false),
         Restaurant(name: "D", type: "4", location: "Microsoft", image: "4.png", isVisited: false)
         
     
