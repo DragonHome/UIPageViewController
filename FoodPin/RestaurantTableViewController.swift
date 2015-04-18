@@ -27,13 +27,18 @@ class RestaurantTableViewController: UITableViewController, UITableViewDataSourc
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
             }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.hidesBarsOnSwipe = true
+    }
     
     // MARK: - Table view delegate
     
@@ -100,7 +105,6 @@ class RestaurantTableViewController: UITableViewController, UITableViewDataSourc
         cell.locationLabel.text = restaurant.location
         cell.typeLabel.text = restaurant.type
         cell.thumbnailImageView.image = UIImage(named: restaurant.image)
-        cell.favorIconImageView.hidden = !restaurant.isVisited
         
         //Circular image...
         cell.thumbnailImageView.layer.cornerRadius = cell.thumbnailImageView.frame.size.width / 2
@@ -203,15 +207,12 @@ class RestaurantTableViewController: UITableViewController, UITableViewDataSourc
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
         
         if segue.identifier == "showRestaurantDetail" {
             if let indexPath = self.tableView.indexPathForSelectedRow() {
                 let destinationController = segue.destinationViewController as! DetailViewController
                 
-                destinationController.restaurantImage = self.restaurants[indexPath.row].image
-                destinationController.restaurantName = self.restaurants[indexPath.row].name
+                destinationController.restaurant = restaurants[indexPath.row]
             }
         }
     }
