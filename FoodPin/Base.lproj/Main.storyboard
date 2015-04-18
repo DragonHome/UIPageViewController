@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="1G6-rw-Ezn">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Restaurant Table View Controller-->
@@ -86,19 +87,29 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fk5-K0-yo7" id="pBw-nE-qeO">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Field" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GKl-g6-n85">
-                                                    <rect key="frame" x="17" y="7" width="74" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Field" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GKl-g6-n85">
+                                                    <rect key="frame" x="17" y="7" width="32" height="21"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Value" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="clk-BN-SEO">
-                                                    <rect key="frame" x="99" y="7" width="151" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Value" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="clk-BN-SEO">
+                                                    <rect key="frame" x="57" y="7" width="245" height="21"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="GKl-g6-n85" firstAttribute="leading" secondItem="pBw-nE-qeO" secondAttribute="leadingMargin" constant="9" id="7ec-TB-N5t"/>
+                                                <constraint firstItem="GKl-g6-n85" firstAttribute="leading" secondItem="pBw-nE-qeO" secondAttribute="leadingMargin" constant="9" id="C2s-Gs-dVL"/>
+                                                <constraint firstItem="GKl-g6-n85" firstAttribute="top" secondItem="pBw-nE-qeO" secondAttribute="topMargin" constant="-1" id="FYS-Aw-90r"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="clk-BN-SEO" secondAttribute="trailing" constant="10" id="OOI-4r-3da"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="clk-BN-SEO" secondAttribute="bottom" constant="-1" id="S53-Zo-aaF"/>
+                                                <constraint firstItem="clk-BN-SEO" firstAttribute="leading" secondItem="GKl-g6-n85" secondAttribute="trailing" constant="8" id="SJK-o5-ySk"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="GKl-g6-n85" secondAttribute="bottom" constant="-1" id="k2g-jX-I4R"/>
+                                                <constraint firstItem="clk-BN-SEO" firstAttribute="top" secondItem="pBw-nE-qeO" secondAttribute="topMargin" constant="-1" id="o20-7s-peq"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="fieldLabel" destination="GKl-g6-n85" id="4zQ-T9-lgU"/>
