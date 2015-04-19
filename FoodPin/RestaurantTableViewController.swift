@@ -31,6 +31,8 @@ class RestaurantTableViewController: UITableViewController, UITableViewDataSourc
     
     var searchResults:[Restaurant] = []
     
+    //UserDefaults Implementation
+    
     func filterContentForSearchText(searchText: String){
         searchResults = restaurants.filter({
             (restaurant: Restaurant) -> Bool in
@@ -52,6 +54,16 @@ class RestaurantTableViewController: UITableViewController, UITableViewDataSourc
         
         searchController.searchResultsUpdater = self
         searchController.dimsBackgroundDuringPresentation = false
+        
+        // NSUserDefaults & PageViewController
+        
+        let defaults = NSUserDefaults.standardUserDefaults()
+        let hasViewedWalkthrough = defaults.boolForKey("hasViewedWalkthrough")
+        if hasViewedWalkthrough == false {
+            if let pageViewController = storyboard?.instantiateViewControllerWithIdentifier("PageViewController") as? PageViewController {
+                self.presentViewController(pageViewController, animated: true, completion: nil)
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {

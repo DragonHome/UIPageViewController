@@ -243,7 +243,7 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3eN-MU-61o" id="NTZ-Sv-PTF">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PMl-4I-cHd">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PMl-4I-cHd">
                                                     <rect key="frame" x="164" y="8" width="46" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -263,9 +263,6 @@
                                                 <constraint firstItem="q57-wG-zOC" firstAttribute="leading" secondItem="NTZ-Sv-PTF" secondAttribute="leadingMargin" constant="11" id="AT5-4w-Brj"/>
                                                 <constraint firstItem="q57-wG-zOC" firstAttribute="bottom" secondItem="NTZ-Sv-PTF" secondAttribute="bottomMargin" id="Can-dZ-EYD"/>
                                                 <constraint firstItem="q57-wG-zOC" firstAttribute="centerX" secondItem="PMl-4I-cHd" secondAttribute="centerX" id="EHJ-9S-mbF"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="PMl-4I-cHd" secondAttribute="trailing" constant="157" id="aL7-wA-Qa6"/>
-                                                <constraint firstItem="q57-wG-zOC" firstAttribute="top" secondItem="PMl-4I-cHd" secondAttribute="bottom" constant="4" id="nAp-KT-Dvb"/>
-                                                <constraint firstItem="PMl-4I-cHd" firstAttribute="leading" secondItem="NTZ-Sv-PTF" secondAttribute="leadingMargin" constant="156" id="tl8-gJ-hjT"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -464,6 +461,92 @@
             </objects>
             <point key="canvasLocation" x="670" y="406"/>
         </scene>
+        <!--Page View Controller-->
+        <scene sceneID="feE-MN-I1z">
+            <objects>
+                <pageViewController storyboardIdentifier="PageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="OZ3-50-M8i" customClass="PageViewController" customModule="FoodPin" customModuleProvider="target" sceneMemberID="viewController">
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </pageViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MAq-9E-Kr1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="669.5" y="1174.5"/>
+        </scene>
+        <!--Page Content View Controller-->
+        <scene sceneID="qZ7-EK-vbI">
+            <objects>
+                <viewController storyboardIdentifier="PageContentViewController" id="htl-P8-ESg" customClass="PageContentViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Pa0-Jb-AYP"/>
+                        <viewControllerLayoutGuide type="bottom" id="LZq-BT-KuE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ovy-v4-Bqr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Heading" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qnv-cB-45S">
+                                <rect key="frame" x="132" y="60" width="111" height="30"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="24"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tnz-ay-BSt">
+                                <rect key="frame" x="0.0" y="267" width="375" height="400"/>
+                            </imageView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="27Y-AL-TkU">
+                                <rect key="frame" x="168" y="8" width="39" height="37"/>
+                                <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="currentPageIndicatorTintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </pageControl>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YKM-5Q-vE8">
+                                <rect key="frame" x="127" y="172" width="120" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Get Started">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="close:" destination="htl-P8-ESg" eventType="touchUpInside" id="WVW-Ao-HcY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GKO-UK-AWD">
+                                <rect key="frame" x="264" y="172" width="30" height="30"/>
+                                <state key="normal" image="forward">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="nextScreen:" destination="htl-P8-ESg" eventType="touchUpInside" id="Qad-qO-C7x"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Subheading" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ndF-vn-Rsv">
+                                <rect key="frame" x="41" y="90" width="292" height="66"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="ndF-vn-Rsv" secondAttribute="centerX" id="TeM-V9-VpG"/>
+                            <constraint firstItem="LZq-BT-KuE" firstAttribute="top" secondItem="Tnz-ay-BSt" secondAttribute="bottom" id="eNQ-QE-LFN"/>
+                            <constraint firstItem="Tnz-ay-BSt" firstAttribute="leading" secondItem="ovy-v4-Bqr" secondAttribute="leadingMargin" constant="-16" id="kfr-DU-WXW"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Tnz-ay-BSt" secondAttribute="trailing" constant="-16" id="vVd-k8-RLK"/>
+                            <constraint firstAttribute="centerX" secondItem="qnv-cB-45S" secondAttribute="centerX" id="wKd-RW-3i2"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="contentImageView" destination="Tnz-ay-BSt" id="nXY-2s-oPV"/>
+                        <outlet property="forwardButton" destination="GKO-UK-AWD" id="eNL-cj-aBg"/>
+                        <outlet property="getStartedButton" destination="YKM-5Q-vE8" id="zc7-qM-jFb"/>
+                        <outlet property="headingLabel" destination="qnv-cB-45S" id="zgY-Zn-uj2"/>
+                        <outlet property="pageControl" destination="27Y-AL-TkU" id="8J5-PY-Fbq"/>
+                        <outlet property="subHeadingLabel" destination="ndF-vn-Rsv" id="B10-L4-oEZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hf6-GY-ex5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="242.5" y="1174.5"/>
+        </scene>
         <!--New Restaurant-->
         <scene sceneID="Qb6-zk-IXb">
             <objects>
@@ -488,6 +571,7 @@
         <image name="bad" width="50" height="50"/>
         <image name="camera" width="250" height="250"/>
         <image name="close" width="50" height="50"/>
+        <image name="forward" width="141" height="141"/>
         <image name="good" width="50" height="50"/>
         <image name="great" width="50" height="50"/>
         <image name="marker" width="50" height="50"/>
