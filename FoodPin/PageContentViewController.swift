@@ -42,6 +42,8 @@ class PageContentViewController: UIViewController {
         
         headingLabel.text = heading
         subHeadingLabel.text = subHeading
+        subHeadingLabel.lineBreakMode =  NSLineBreakMode.ByWordWrapping
+        subHeadingLabel.numberOfLines = 0;
         contentImageView.image = UIImage(named: imageFile)
         
         pageControl.currentPage = index

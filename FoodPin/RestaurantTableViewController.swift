@@ -57,14 +57,14 @@ class RestaurantTableViewController: UITableViewController, UITableViewDataSourc
         
         // NSUserDefaults & PageViewController
         
-        let defaults = NSUserDefaults.standardUserDefaults()
-        let hasViewedWalkthrough = defaults.boolForKey("hasViewedWalkthrough")
-        if hasViewedWalkthrough == false {
+//        let defaults = NSUserDefaults.standardUserDefaults()
+//        let hasViewedWalkthrough = defaults.boolForKey("hasViewedWalkthrough")
+//        if hasViewedWalkthrough == false {
             if let pageViewController = storyboard?.instantiateViewControllerWithIdentifier("PageViewController") as? PageViewController {
                 self.presentViewController(pageViewController, animated: true, completion: nil)
             }
         }
-    }
+//    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
