@@ -64,7 +64,8 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="667"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pUz-9u-OZw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -115,8 +116,8 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" misplaced="YES" text="Value" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="clk-BN-SEO">
-                                                    <rect key="frame" x="57" y="7" width="245" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Value" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="clk-BN-SEO">
+                                                    <rect key="frame" x="57" y="7" width="300" height="21"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -226,10 +227,15 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="n8F-KT-UMo" id="rJC-Zk-paV">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="camera" translatesAutoresizingMaskIntoConstraints="NO" id="6p3-GI-kDe">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="camera" translatesAutoresizingMaskIntoConstraints="NO" id="6p3-GI-kDe">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="249"/>
                                                 </imageView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="6p3-GI-kDe" firstAttribute="top" secondItem="rJC-Zk-paV" secondAttribute="topMargin" constant="-8" id="Prs-ad-SHw"/>
+                                                <constraint firstItem="6p3-GI-kDe" firstAttribute="leading" secondItem="rJC-Zk-paV" secondAttribute="leadingMargin" constant="-8" id="f9j-t9-Fg6"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="6p3-GI-kDe" secondAttribute="trailing" constant="-8" id="rUs-cV-WLe"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="72" id="3eN-MU-61o">
@@ -251,21 +257,15 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Restaurant Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kdK-2z-ZWw">
-                                                    <rect key="frame" x="19" y="33" width="337" height="30"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="30" id="Ycs-Ca-azJ"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
-                                                </textField>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailingMargin" secondItem="q57-wG-zOC" secondAttribute="trailing" constant="11" id="2ir-rm-qJI"/>
                                                 <constraint firstItem="q57-wG-zOC" firstAttribute="leading" secondItem="NTZ-Sv-PTF" secondAttribute="leadingMargin" constant="11" id="AT5-4w-Brj"/>
                                                 <constraint firstItem="q57-wG-zOC" firstAttribute="bottom" secondItem="NTZ-Sv-PTF" secondAttribute="bottomMargin" id="Can-dZ-EYD"/>
                                                 <constraint firstItem="q57-wG-zOC" firstAttribute="centerX" secondItem="PMl-4I-cHd" secondAttribute="centerX" id="EHJ-9S-mbF"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="PMl-4I-cHd" secondAttribute="trailing" constant="157" id="aL7-wA-Qa6"/>
                                                 <constraint firstItem="q57-wG-zOC" firstAttribute="top" secondItem="PMl-4I-cHd" secondAttribute="bottom" constant="4" id="nAp-KT-Dvb"/>
+                                                <constraint firstItem="PMl-4I-cHd" firstAttribute="leading" secondItem="NTZ-Sv-PTF" secondAttribute="leadingMargin" constant="156" id="tl8-gJ-hjT"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -360,7 +360,6 @@
                     <connections>
                         <outlet property="imageView" destination="6p3-GI-kDe" id="a7h-ar-zoI"/>
                         <outlet property="locationTextField" destination="pY9-tn-Od3" id="HOp-wo-5C6"/>
-                        <outlet property="nameTextField" destination="kdK-2z-ZWw" id="PLb-rI-0pW"/>
                         <outlet property="noButton" destination="va7-0T-j8S" id="TR6-fh-RpB"/>
                         <outlet property="typeTextField" destination="cgz-HS-fTX" id="flC-UX-KLo"/>
                         <outlet property="yesButton" destination="a1Z-Hv-QpT" id="ex9-RQ-O6U"/>
@@ -419,8 +418,8 @@
                                     </button>
                                 </subviews>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XAg-dU-L18">
-                                <rect key="frame" x="291" y="40" width="45" height="45"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XAg-dU-L18">
+                                <rect key="frame" x="289" y="40" width="50" height="50"/>
                                 <state key="normal" image="close">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>

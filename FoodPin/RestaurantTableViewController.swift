@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RestaurantTableViewController: UITableViewController, UITableViewDataSource, UITableViewDelegate{
+class RestaurantTableViewController: UITableViewController, UITableViewDataSource, UITableViewDelegate, UISearchResultsUpdating{
     
     @IBAction func unwindToHomeScreen(segue:UIStoryboardSegue){
         
@@ -24,15 +24,34 @@ class RestaurantTableViewController: UITableViewController, UITableViewDataSourc
         Restaurant(name: "A", type: "1", location: "Apple", image: "1.png", isVisited: false),
         Restaurant(name: "B", type: "2", location: "Google", image: "2.png", isVisited: false),
         Restaurant(name: "C", type: "3", location: "Facebook", image: "3.png", isVisited: false),
-        Restaurant(name: "D", type: "4", location: "Microsoft", image: "4.png", isVisited: false)
-        
+        Restaurant(name: "D", type: "4", location: "Microsoft", image: "4.png", isVisited: false)]
     
-    ]
+    // UISearchController
+    var searchController:UISearchController!
+    
+    var searchResults:[Restaurant] = []
+    
+    func filterContentForSearchText(searchText: String){
+        searchResults = restaurants.filter({
+            (restaurant: Restaurant) -> Bool in
+            let nameMatch = restaurant.name.rangeOfString(searchText, options: NSStringCompareOptions.CaseInsensitiveSearch)
+            return nameMatch != nil
+        })
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
+        
+        // UISearchController
+        searchController = UISearchController(searchResultsController: nil)
+        searchController.searchBar.sizeToFit()
+        tableView.tableHeaderView = searchController.searchBar
+        definesPresentationContext = true
+        
+        searchController.searchResultsUpdater = self
+        searchController.dimsBackgroundDuringPresentation = false
     }
 
     override func didReceiveMemoryWarning() {
@@ -42,6 +61,13 @@ class RestaurantTableViewController: UITableViewController, UITableViewDataSourc
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.hidesBarsOnSwipe = true
+    }
+    
+    // Uupdate searching results
+    func updateSearchResultsForSearchController(searchController: UISearchController) {
+        let searchText = searchController.searchBar.text
+        filterContentForSearchText(searchText)
+        tableView.reloadData()
     }
     
     // MARK: - Table view delegate
@@ -94,7 +120,11 @@ class RestaurantTableViewController: UITableViewController, UITableViewDataSourc
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return self.restaurants.count
+        if searchController.active{
+            return searchResults.count
+        }else{
+            return self.restaurants.count
+        }
     }
     
     
@@ -104,7 +134,7 @@ class RestaurantTableViewController: UITableViewController, UITableViewDataSourc
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! CustomTableViewCell
 
          //Configure the cell...
-        let restaurant = restaurants[indexPath.row]
+        let restaurant = (searchController.active) ? searchResults[indexPath.row] : restaurants[indexPath.row]
         cell.nameLabel.text = restaurant.name
         cell.locationLabel.text = restaurant.location
         cell.typeLabel.text = restaurant.type
@@ -127,14 +157,16 @@ class RestaurantTableViewController: UITableViewController, UITableViewDataSourc
         return true
     }
     
-
-    /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return NO if you do not want the specified item to be editable.
+        
+        if searchController.active{
+            return false
+        }else{
         return true
+        }
     }
-    */
+
 
     
     // Override to support editing the table view.
@@ -216,7 +248,7 @@ class RestaurantTableViewController: UITableViewController, UITableViewDataSourc
             if let indexPath = self.tableView.indexPathForSelectedRow() {
                 let destinationController = segue.destinationViewController as! DetailViewController
                 
-                destinationController.restaurant = restaurants[indexPath.row]
+                destinationController.restaurant = (searchController.active) ? searchResults[indexPath.row] : restaurants[indexPath.row]
             }
         }
     }
