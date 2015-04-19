@@ -12,6 +12,7 @@
 		E919E6AF1AE23E5900A94099 /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E919E6AE1AE23E5900A94099 /* DetailTableViewCell.swift */; };
 		E9E5EDB81AE36BC400660E5E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9E5EDB71AE36BC400660E5E /* MapKit.framework */; };
 		E9E5EDBA1AE3726B00660E5E /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E5EDB91AE3726B00660E5E /* MapViewController.swift */; };
+		E9E5EDBE1AE38D9800660E5E /* AddTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E5EDBD1AE38D9800660E5E /* AddTableViewController.swift */; };
 		E9E844A81AE2C059004FDEDE /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E844A71AE2C059004FDEDE /* ReviewViewController.swift */; };
 		E9E9526E1AE155D1007E32E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E9526D1AE155D1007E32E2 /* AppDelegate.swift */; };
 		E9E952711AE155D1007E32E2 /* CustomTableView_shareAction_deleteAction.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E9E9526F1AE155D1007E32E2 /* CustomTableView_shareAction_deleteAction.xcdatamodeld */; };
@@ -38,6 +39,7 @@
 		E919E6AE1AE23E5900A94099 /* DetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
 		E9E5EDB71AE36BC400660E5E /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		E9E5EDB91AE3726B00660E5E /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		E9E5EDBD1AE38D9800660E5E /* AddTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTableViewController.swift; sourceTree = "<group>"; };
 		E9E844A71AE2C059004FDEDE /* ReviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
 		E9E952681AE155D1007E32E2 /* FoodPin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodPin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9E9526C1AE155D1007E32E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 				E919E6AE1AE23E5900A94099 /* DetailTableViewCell.swift */,
 				E9E844A71AE2C059004FDEDE /* ReviewViewController.swift */,
 				E9E5EDB91AE3726B00660E5E /* MapViewController.swift */,
+				E9E5EDBD1AE38D9800660E5E /* AddTableViewController.swift */,
 			);
 			path = FoodPin;
 			sourceTree = "<group>";
@@ -242,6 +245,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E9E9526E1AE155D1007E32E2 /* AppDelegate.swift in Sources */,
+				E9E5EDBE1AE38D9800660E5E /* AddTableViewController.swift in Sources */,
 				E9E952711AE155D1007E32E2 /* CustomTableView_shareAction_deleteAction.xcdatamodeld in Sources */,
 				E919E6AF1AE23E5900A94099 /* DetailTableViewCell.swift in Sources */,
 				E919E6AD1AE2198700A94099 /* Restaurant.swift in Sources */,

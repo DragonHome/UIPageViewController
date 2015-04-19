@@ -15,7 +15,7 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
     
     @IBOutlet weak var tableView: UITableView!
     
-    @IBAction func close(segue:UIStoryboard){
+    @IBAction func close(segue:UIStoryboardSegue){
         
     }
     

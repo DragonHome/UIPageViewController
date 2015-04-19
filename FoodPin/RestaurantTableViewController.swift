@@ -10,6 +10,10 @@ import UIKit
 
 class RestaurantTableViewController: UITableViewController, UITableViewDataSource, UITableViewDelegate{
     
+    @IBAction func unwindToHomeScreen(segue:UIStoryboardSegue){
+        
+    }
+    
     var restaurantNames = ["A", "B", "C", "D"]
     var restaurantLocations = ["Apple", "Google", "Facebook", "Microsoft"]
     var restaurantTypes = ["1", "2", "3", "4"]
