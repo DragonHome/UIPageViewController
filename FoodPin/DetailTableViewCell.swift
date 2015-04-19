@@ -9,6 +9,7 @@
 import UIKit
 
 class DetailTableViewCell: UITableViewCell {
+    @IBOutlet weak var mapButton: UIButton!
 
     @IBOutlet weak var fieldLabel: UILabel!
     @IBOutlet weak var valueLabel: UILabel!

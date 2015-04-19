@@ -26,8 +26,10 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! DetailTableViewCell
+            cell.backgroundColor = UIColor.clearColor()
         
         //Configure the cell...
+        cell.mapButton.hidden = true
         switch indexPath.row{
         case 0:
             cell.fieldLabel.text = "Name"
@@ -38,6 +40,7 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
         case 2:
             cell.fieldLabel.text = "Location"
             cell.valueLabel.text = restaurant.location
+            cell.mapButton.hidden = false
         case 3:
             cell.fieldLabel.text = "Been here"
             cell.valueLabel.text = (restaurant.isVisited) ? "Yes, I've been here before" : "No"
@@ -45,7 +48,7 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
             cell.fieldLabel.text = ""
             cell.valueLabel.text = ""
         }
-        cell.backgroundColor = UIColor.clearColor()
+       
         return cell
     }
     
@@ -83,14 +86,18 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showMap"{
+            let destinationController = segue.destinationViewController as! MapViewController
+            destinationController.restaurant = restaurant
+        }
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
+    
 
 }

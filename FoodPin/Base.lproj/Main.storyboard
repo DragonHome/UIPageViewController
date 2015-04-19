@@ -114,20 +114,33 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i51-BS-vaR">
+                                                    <rect key="frame" x="335" y="3" width="25" height="25"/>
+                                                    <state key="normal" image="marker">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <segue destination="pRt-0u-FUO" kind="push" identifier="showMap" id="QzH-Hn-w0N"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="GKl-g6-n85" firstAttribute="leading" secondItem="pBw-nE-qeO" secondAttribute="leadingMargin" constant="9" id="7ec-TB-N5t"/>
                                                 <constraint firstItem="GKl-g6-n85" firstAttribute="leading" secondItem="pBw-nE-qeO" secondAttribute="leadingMargin" constant="9" id="C2s-Gs-dVL"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="i51-BS-vaR" secondAttribute="trailing" constant="6" id="C5G-RU-jiR"/>
+                                                <constraint firstItem="i51-BS-vaR" firstAttribute="top" secondItem="pBw-nE-qeO" secondAttribute="topMargin" constant="-5" id="F6M-oc-dfN"/>
                                                 <constraint firstItem="GKl-g6-n85" firstAttribute="top" secondItem="pBw-nE-qeO" secondAttribute="topMargin" constant="-1" id="FYS-Aw-90r"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="clk-BN-SEO" secondAttribute="trailing" constant="10" id="OOI-4r-3da"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="clk-BN-SEO" secondAttribute="bottom" constant="-1" id="S53-Zo-aaF"/>
                                                 <constraint firstItem="clk-BN-SEO" firstAttribute="leading" secondItem="GKl-g6-n85" secondAttribute="trailing" constant="8" id="SJK-o5-ySk"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="GKl-g6-n85" secondAttribute="bottom" constant="-1" id="k2g-jX-I4R"/>
                                                 <constraint firstItem="clk-BN-SEO" firstAttribute="top" secondItem="pBw-nE-qeO" secondAttribute="topMargin" constant="-1" id="o20-7s-peq"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="i51-BS-vaR" secondAttribute="bottom" constant="-6" id="r31-0y-we3"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="fieldLabel" destination="GKl-g6-n85" id="4zQ-T9-lgU"/>
+                                            <outlet property="mapButton" destination="i51-BS-vaR" id="aHz-Ps-qFU"/>
                                             <outlet property="valueLabel" destination="clk-BN-SEO" id="l3U-ci-ZwH"/>
                                         </connections>
                                     </tableViewCell>
@@ -155,6 +168,34 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TJk-2L-WYe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1576.5" y="405.5"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="1nR-aL-LVV">
+            <objects>
+                <viewController id="pRt-0u-FUO" customClass="MapViewController" customModule="FoodPin" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Zgg-pD-Pu2"/>
+                        <viewControllerLayoutGuide type="bottom" id="2lL-KZ-z6d"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="PSF-iF-h15">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="D8L-3h-Z8w">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="egD-Xj-U38"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="mapView" destination="D8L-3h-Z8w" id="4dK-g2-Gsp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7AM-tV-6l5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1576.5" y="1160.5"/>
         </scene>
         <!--Review View Controller-->
         <scene sceneID="xlx-Mn-yhj">
@@ -252,6 +293,7 @@
         <image name="close" width="50" height="50"/>
         <image name="good" width="50" height="50"/>
         <image name="great" width="50" height="50"/>
+        <image name="marker" width="50" height="50"/>
         <image name="wallpaper" width="540" height="960"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

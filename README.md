@@ -1,2 +1,1 @@
-# SimpleAnimation
 # Simple-Map-Kit
